@@ -1,9 +1,13 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_statemanagement/firebase/secound_screen2.dart';
 
-import 'secound_screen.dart';
+import 'api/secound_screen.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(ProviderScope(child: MyApp()));
 }
 
@@ -33,7 +37,11 @@ class HomeView extends StatelessWidget {
       FloatingActionButton(
         onPressed: (){
           Navigator.push(context, MaterialPageRoute(
-              builder: (context)=>SecondScreen()));
+              builder: (context)=>
+                  // SecondScreen()
+                  SecondScreen2()
+          )
+          );
         },
         
       ),

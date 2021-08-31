@@ -1,9 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_statemanagement/firebase/secound_screen2.dart';
+import 'package:riverpod_statemanagement/app_api%20using_riverpod/view/home_view.dart';
 
-import 'api/secound_screen.dart';
+
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,7 +13,6 @@ void main() async{
 
 class MyApp extends StatelessWidget {
 
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,12 +20,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:HomeView(),
+      home:HomeView()
     );
   }
 }
 
-class HomeView extends StatelessWidget {
+class HomeView1 extends StatelessWidget {
 
 
   @override
@@ -39,7 +38,9 @@ class HomeView extends StatelessWidget {
           Navigator.push(context, MaterialPageRoute(
               builder: (context)=>
                   // SecondScreen()
-                  SecondScreen2()
+                  // SecondScreen2()
+            // SecondView()
+            HomeView()
           )
           );
         },

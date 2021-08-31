@@ -16,6 +16,7 @@ final weatherProvider = StateProvider<String>((ref) {
 class SecondView extends ConsumerWidget {
   @override
   Widget build(BuildContext context,watch) {
+
     final city =watch(cityProvider);
     final weather =watch(weatherProvider);
     
@@ -45,7 +46,8 @@ class SecondView extends ConsumerWidget {
                 city.state=value;
               } ,
             ),
-            Text(weather.state,style: TextStyle(
+            Text(
+              weather.state,style: TextStyle(
               fontSize: 40
             ),)
           ],

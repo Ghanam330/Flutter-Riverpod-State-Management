@@ -1,7 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_statemanagement/firebase/user_model.dart';
+
+import 'user_model.dart';
+
 
 CollectionReference userDate = FirebaseFirestore.instance.collection('users');
 final getUserDate = FutureProvider<QuerySnapshot>((ref) => userDate.get());
